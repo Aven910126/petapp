@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petapp/Insert_Page.dart';
 import 'package:petapp/webView.dart';
 void main() {
   runApp(const MyApp());
@@ -12,9 +13,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
-      home: const WebViewExample(),
+      debugShowCheckedModeBanner: false, // 去除右上方Debug標誌
+      home: const MyHomePage(title: '寵物監測系統',),
+      routes: <String, WidgetBuilder>{
+        '/webview':(_) => new WebViewExample(),
+        '/insertpage':(_) => new Insert_page(),
+        //'/login':(_) => new Login(),
+
+      }
     );
   }
 }
@@ -27,13 +35,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,22 +44,27 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+              ),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/webview');
+              },
+              child: Text("查看圖表數據"),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+              ),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/insertpage');
+              },
+              child: Text("新增寵物"),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
