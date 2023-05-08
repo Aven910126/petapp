@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:petapp/Insert_Page.dart';
+import 'package:petapp/pet_Info.dart';
 import 'package:petapp/webView.dart';
+
+import 'Insert_Page.dart';
+import 'login.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -15,14 +18,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      debugShowCheckedModeBanner: false, // 去除右上方Debug標誌
-      home: const MyHomePage(title: '寵物監測系統',),
+        debugShowCheckedModeBanner: false, // 去除右上方Debug標誌
+        home: const MyHomePage(title: '寵物監測系統',),
       routes: <String, WidgetBuilder>{
         '/webview':(_) => new WebViewExample(),
         '/insertpage':(_) => new Insert_page(),
-        //'/login':(_) => new Login(),
-
-      }
+        '/petinfo':(_) => new Pet_info(),
+        '/login':(_) => new loginPage(),
+        }
     );
   }
 }
@@ -62,6 +65,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.of(context).pushNamed('/insertpage');
               },
               child: Text("新增寵物"),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+              ),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/petinfo');
+              },
+              child: Text("寵物資訊"),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+              ),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/login');
+              },
+              child: Text("登入"),
             ),
           ],
         ),

@@ -12,320 +12,329 @@ class _Insert_PageState extends State<Insert_page> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
-          '新增寵物',
-          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
+          '加入新的寵物',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ),
-      ),
-      body: Column(
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              Container(
-                margin:
-                    EdgeInsets.only(left: 30, top: 30, right: 20, bottom: 0),
-                color: Colors.grey,
-                child: Center(
-                  child: Text('照片'),
-                ),
-                width: 142,
-                height: 160,
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 0, top: 25, right: 0, bottom: 0),
-                width: 176.0,
-                height: 160,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(
-                          left: 0, top: 0, right: 0, bottom: 0),
-                      child: const Text('寵物名稱', style: TextStyle(fontSize: 18)),
-                    ),
-                    Container(
-                        margin: const EdgeInsets.only(
-                            left: 0, top: 10, right: 0, bottom: 0),
-                        child: const TextField(
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              isCollapsed: true,
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 7),
-                              filled: true,
-                              fillColor: Color(0xFFFFEEB0),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(5),
-                                ),
-                                borderSide: BorderSide.none,
-                              ),
-                            ))),
-                    Container(
-                      alignment: Alignment.bottomLeft,
-                      margin: const EdgeInsets.only(
-                          left: 0, top: 22, right: 0, bottom: 0),
-                      child:
-                          const Text('出生年月日', style: TextStyle(fontSize: 18)),
-                    ),
-                    Container(
-                        alignment: Alignment.bottomLeft,
-                        margin: const EdgeInsets.only(
-                            left: 0, top: 10, right: 0, bottom: 0),
-                        child: const TextField(
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              isCollapsed: true,
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 7),
-                              filled: true,
-                              fillColor: Color(0xFFFFEEB0),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(5),
-                                ),
-                                borderSide: BorderSide.none,
-                              ),
-                            ))),
-                  ],
-                ),
-              ),
-            ],
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: GestureDetector(
+          child: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
           ),
-          Container(
-            width: 341,
-            alignment: Alignment.bottomLeft,
-            margin:
-                const EdgeInsets.only(left: 0, top: 22, right: 0, bottom: 0),
-            child: const Text('寵物品種', style: TextStyle(fontSize: 18)),
-          ),
-          Container(
-              width: 341,
-              alignment: Alignment.bottomLeft,
-              margin:
-                  const EdgeInsets.only(left: 0, top: 10, right: 0, bottom: 0),
-              child: const TextField(
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    isCollapsed: true,
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 8, vertical: 7),
-                    filled: true,
-                    fillColor: Color(0xFFFFEEB0),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(5),
-                      ),
-                      borderSide: BorderSide.none,
-                    ),
-                  ))),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                children: [
-                  Container(
-                    width: 155,
-                    alignment: Alignment.bottomLeft,
-                    margin: const EdgeInsets.only(
-                        left: 0, top: 22, right: 10, bottom: 0),
-                    child: const Text('寵物性別', style: TextStyle(fontSize: 18)),
-                  ),
-                  Container(
-                      width: 155,
-                      alignment: Alignment.bottomLeft,
-                      margin: const EdgeInsets.only(
-                          left: 0, top: 10, right: 10, bottom: 0),
-                      child: const TextField(
-                          keyboardType: TextInputType.text,
-                          decoration: InputDecoration(
-                            isCollapsed: true,
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 7),
-                            filled: true,
-                            fillColor: Color(0xFFFFEEB0),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(5),
-                              ),
-                              borderSide: BorderSide.none,
-                            ),
-                          ))),
-                ],
-              ),
-              Column(
-                children: [
-                  Container(
-                    width: 155,
-                    alignment: Alignment.bottomLeft,
-                    margin: const EdgeInsets.only(
-                        left: 20, top: 22, right: 0, bottom: 0),
-                    child: const Text('寵物體重', style: TextStyle(fontSize: 18)),
-                  ),
-                  Container(
-                      width: 155,
-                      alignment: Alignment.bottomLeft,
-                      margin: const EdgeInsets.only(
-                          left: 20, top: 10, right: 0, bottom: 0),
-                      child: const TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                            isCollapsed: true,
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 7),
-                            filled: true,
-                            fillColor: Color(0xFFFFEEB0),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(5),
-                              ),
-                              borderSide: BorderSide.none,
-                            ),
-                          ))),
-                ],
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                children: [
-                  Container(
-                    width: 155,
-                    alignment: Alignment.bottomLeft,
-                    margin: const EdgeInsets.only(
-                        left: 0, top: 22, right: 10, bottom: 0),
-                    child: const Text('寵物年齡', style: TextStyle(fontSize: 18)),
-                  ),
-                  Container(
-                      width: 155,
-                      alignment: Alignment.bottomLeft,
-                      margin: const EdgeInsets.only(
-                          left: 0, top: 10, right: 10, bottom: 0),
-                      child: const TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                            isCollapsed: true,
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 7),
-                            filled: true,
-                            fillColor: Color(0xFFFFEEB0),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(5),
-                              ),
-                              borderSide: BorderSide.none,
-                            ),
-                          ))),
-                ],
-              ),
-              Column(
-                children: [
-                  Container(
-                    width: 155,
-                    alignment: Alignment.bottomLeft,
-                    margin: const EdgeInsets.only(
-                        left: 20, top: 22, right: 0, bottom: 0),
-                    child: const Text('寵物體型', style: TextStyle(fontSize: 18)),
-                  ),
-                  Container(
-                      width: 155,
-                      alignment: Alignment.bottomLeft,
-                      margin: const EdgeInsets.only(
-                          left: 20, top: 10, right: 0, bottom: 0),
-                      child: const TextField(
-                          keyboardType: TextInputType.text,
-                          decoration: InputDecoration(
-                            isCollapsed: true,
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 7),
-                            filled: true,
-                            fillColor: Color(0xFFFFEEB0),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(5),
-                              ),
-                              borderSide: BorderSide.none,
-                            ),
-                          ))),
-                ],
-              ),
-            ],
-          ),
-          Container(
-            width: 341,
-            alignment: Alignment.bottomLeft,
-            margin:
-                const EdgeInsets.only(left: 0, top: 22, right: 0, bottom: 0),
-            child: const Text('備註', style: TextStyle(fontSize: 18)),
-          ),
-          Container(
-              width: 341,
-              alignment: Alignment.bottomLeft,
-              margin:
-                  const EdgeInsets.only(left: 0, top: 10, right: 0, bottom: 0),
-              child: const TextField(
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    isCollapsed: true,
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 10, vertical: 25),
-                    filled: true,
-                    fillColor: Color(0xFFFFEEB0),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(5),
-                      ),
-                      borderSide: BorderSide.none,
-                    ),
-                  ))),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                margin: const EdgeInsets.only(
-                    left: 0, top: 30, right: 15, bottom: 0),
-                width: 155,
-                height: 51,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFFFFC700),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/webview');
-                  },
-                  child: Text(
-                    "新增寵物",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                  ),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(
-                    left: 15, top: 30, right: 0, bottom: 0),
-                width: 155,
-                height: 51,
-                child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    side: BorderSide(width: 4, color: Color(0xFFFFC700)),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/webview');
-                  },
-                  child: Text(
-                    "清除資料",
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: Color(0xFF404040),
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              )
-            ],
+          onTap: () {
+            Navigator.pop(context);
+          },
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.menu),
+            tooltip: 'menu',
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('This is a menu')));
+            },
           ),
         ],
       ),
+      body:
+      Scrollbar(
+        thumbVisibility: true,
+        child: ListView.builder(
+            primary: true,
+            itemCount: 1,
+            itemBuilder: (BuildContext context, int index) {
+              return Column(
+                children: <Widget>[
+                  Container(
+                    margin:
+                    EdgeInsets.only(left: 0, top: 30, right: 0, bottom: 0),
+                    child:
+                      Text('加入新的寵物',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 40),),
+                    width: 341,
+                  ),
+                  Container(
+                    margin:
+                    EdgeInsets.only(left: 0, top: 0, right: 0, bottom: 0),
+                    child:
+                    Text('請您將新的寵物資訊完整填入以下欄位。',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16,color: Colors.grey),),
+                    width: 341,
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Container(
+                        margin:
+                        EdgeInsets.only(left: 30, top: 30, right: 20, bottom: 0),
+                        color: Colors.grey,
+                        child: Center(
+                          child: Text('照片'),
+                        ),
+                        width: 142,
+                        height: 120,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 0, top: 25, right: 0, bottom: 0),
+                        width: 176.0,
+                        height: 120,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                                margin: const EdgeInsets.only(
+                                    left: 0, top: 0, right: 0, bottom: 0),
+                                child: const TextField(
+                                    keyboardType: TextInputType.text,
+                                    decoration: InputDecoration(
+                                      isCollapsed: true,
+                                      contentPadding: EdgeInsets.symmetric(
+                                          horizontal: 8, vertical: 15),
+                                      hintText: '寵物名稱',
+                                      hintStyle: TextStyle(
+                                        color: Color(0xFFfd9340),
+                                      ),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(13),
+                                        ),
+                                        borderSide: BorderSide(
+                                          color: Color(0xFFDADADA),
+                                          width: 1,
+                                        ),
+                                      ),
+                                    ))),
+                            Container(
+                                margin: const EdgeInsets.only(
+                                    left: 0, top: 14, right: 0, bottom: 0),
+                                child: const TextField(
+                                    keyboardType: TextInputType.text,
+                                    decoration: InputDecoration(
+                                      isCollapsed: true,
+                                      contentPadding: EdgeInsets.symmetric(
+                                          horizontal: 8, vertical: 15),
+                                      hintText: '出生年月日',
+                                      hintStyle: TextStyle(
+                                        color: Color(0xFFfd9340),
+                                      ),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(13),
+                                        ),
+                                        borderSide: BorderSide(
+                                          color: Color(0xFFDADADA),
+                                          width: 1,
+                                        ),
+                                      ),
+                                    ))),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                      width: 341,
+                      alignment: Alignment.bottomLeft,
+                      margin:
+                      const EdgeInsets.only(left: 0, top: 20, right: 0, bottom: 0),
+                      child: const TextField(
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            isCollapsed: true,
+                            contentPadding:
+                            EdgeInsets.symmetric(horizontal: 8, vertical: 15),
+                            hintText: '寵物類別',
+                            hintStyle: TextStyle(
+                              color: Color(0xFFfd9340),
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(13),
+                              ),
+                              borderSide: BorderSide(
+                                color: Color(0xFFDADADA),
+                                width: 1,
+                              ),
+                            ),
+                          ))),
+                  Container(
+                      width: 341,
+                      alignment: Alignment.bottomLeft,
+                      margin:
+                      const EdgeInsets.only(left: 0, top: 20, right: 0, bottom: 0),
+                      child: const TextField(
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            isCollapsed: true,
+                            contentPadding:
+                            EdgeInsets.symmetric(horizontal: 8, vertical: 15),
+                            hintText: '寵物品種',
+                            hintStyle: TextStyle(
+                              color: Color(0xFFfd9340),
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(13),
+                              ),
+                              borderSide: BorderSide(
+                                color: Color(0xFFDADADA),
+                                width: 1,
+                              ),
+                            ),
+                          ))),
+                  Container(
+                      width: 341,
+                      alignment: Alignment.bottomLeft,
+                      margin:
+                      const EdgeInsets.only(left: 0, top: 20, right: 0, bottom: 0),
+                      child: const TextField(
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            isCollapsed: true,
+                            contentPadding:
+                            EdgeInsets.symmetric(horizontal: 8, vertical: 15),
+                            hintText: '寵物性別',
+                            hintStyle: TextStyle(
+                              color: Color(0xFFfd9340),
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(13),
+                              ),
+                              borderSide: BorderSide(
+                                color: Color(0xFFDADADA),
+                                width: 1,
+                              ),
+                            ),
+                          ))),
+                  Container(
+                      width: 341,
+                      alignment: Alignment.bottomLeft,
+                      margin:
+                      const EdgeInsets.only(left: 0, top: 20, right: 0, bottom: 0),
+                      child: const TextField(
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            isCollapsed: true,
+                            contentPadding:
+                            EdgeInsets.symmetric(horizontal: 8, vertical: 15),
+                            hintText: '飼料熱量(每100克)',
+                            hintStyle: TextStyle(
+                              color: Color(0xFFfd9340),
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(13),
+                              ),
+                              borderSide: BorderSide(
+                                color: Color(0xFFDADADA),
+                                width: 1,
+                              ),
+                            ),
+                          ))),
+                  Container(
+                      width: 341,
+                      alignment: Alignment.bottomLeft,
+                      margin:
+                      const EdgeInsets.only(left: 0, top: 20, right: 0, bottom: 0),
+                      child: const TextField(
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            isCollapsed: true,
+                            contentPadding:
+                            EdgeInsets.symmetric(horizontal: 8, vertical: 15),
+                            hintText: '寵物體重',
+                            hintStyle: TextStyle(
+                              color: Color(0xFFfd9340),
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(13),
+                              ),
+                              borderSide: BorderSide(
+                                color: Color(0xFFDADADA),
+                                width: 1,
+                              ),
+                            ),
+                          ))),
+                  Container(
+                      width: 341,
+                      alignment: Alignment.bottomLeft,
+                      margin:
+                      const EdgeInsets.only(left: 0, top: 20, right: 0, bottom: 0),
+                      child: const TextField(
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            isCollapsed: true,
+                            contentPadding:
+                            EdgeInsets.symmetric(horizontal: 8, vertical: 15),
+                            hintText: '機器綁定碼',
+                            hintStyle: TextStyle(
+                              color: Color(0xFFfd9340),
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(13),
+                              ),
+                              borderSide: BorderSide(
+                                color: Color(0xFFDADADA),
+                                width: 1,
+                              ),
+                            ),
+                          ))),
+                  Container(
+                    margin:
+                    const EdgeInsets.only(left: 0, top: 20, right: 0, bottom: 0),
+                    width: 341,
+                    height: 81,
+                    child: Column(
+                      children: [
+                        ClipRRect(
+                          // Put the TextButton on the Gradient Container
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: <Widget>[
+                              // Container
+                              Positioned.fill(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Color(0xFFFBAB7E),
+                                        Color(0xFFF7CE68),
+                                      ],
+                                    ),
+                                    borderRadius: BorderRadius.all(Radius.circular(25)),
+                                  ),
+                                ),
+                              ),
+                              // TextButton_Gradient
+                              Container(
+                                width: 341,
+                                height: 51,
+                                child: TextButton(
+                                  style: ButtonStyle(
+                                      shape: MaterialStateProperty.all(
+                                          RoundedRectangleBorder(
+                                              borderRadius:
+                                              BorderRadius.circular(18.76)))),
+                                  onPressed: () {},
+                                  child: Text(
+                                    '新增寵物',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              );
+            }),
+      )
     );
   }
 }
