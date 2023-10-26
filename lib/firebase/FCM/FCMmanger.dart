@@ -15,7 +15,10 @@ Future<void> onBackgroundMessageHandler(RemoteMessage message) async {
   // make sure you call `initializeApp` before using other Firebase services.
   await Firebase.initializeApp();
 
-  debugPrint("Handling a background message: ${message.messageId}");
+  //debugPrint("Handling a background message: ${message.messageId}");
+  print('Title: ${message.notification?.title}');
+  print('Body: ${message.notification?.body}');
+  print('payload: ${message.data}');
 }
 
 /*
@@ -73,9 +76,10 @@ Future<void> FCMinit() async {
   } else {
     fcmToken = await FirebaseMessaging.instance.getToken();
   }
-  debugPrint('fcmToken:$fcmToken');
+  print('fcmToken:$fcmToken');
 
-  // FirebaseMessaging.onBackgroundMessage(onBackgroundMessageHandler);
-  FirebaseMessaging.onMessage.listen(onMessageHandler);
-  FirebaseMessaging.onMessageOpenedApp.listen(onMessageOpenedApp);
+  FirebaseMessaging.onBackgroundMessage(onBackgroundMessageHandler);
+  //FirebaseMessaging.onMessage.listen(onMessageHandler);
+  //FirebaseMessaging.onMessageOpenedApp.listen(onMessageOpenedApp);
+
 }

@@ -85,7 +85,7 @@ flutter:
     - assets/Backgrounds/
     - assets/Icons/
     - assets/RiveAssets/
-    - assets/tutorial/
+#    - assets/tutorial/
     - .env
   #   - images/a_dot_ham.jpeg
 

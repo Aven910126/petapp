@@ -1,20 +1,26 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:petapp/Page/chatroom/chatroom.dart';
 import 'package:petapp/Page/login/loginPage.dart';
 import 'package:petapp/Page/petInfo/petInfoPage.dart';
 import 'package:petapp/Page/petInsert/petInsertPage.dart';
 import 'package:petapp/commonComponents/entryPoint.dart';
+import 'package:petapp/Page/chatroom/chatroom.dart';
 import 'package:flutter/services.dart';
 
 import 'Page/Home.dart';
+import 'firebase/FCM/FCMmanger.dart';
 
-void main() {
+void main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
     systemNavigationBarColor: Colors.white,
     statusBarIconBrightness: Brightness.dark,
     systemNavigationBarIconBrightness: Brightness.dark,
   ));
+
+  WidgetsFlutterBinding.ensureInitialized(); //FCM
+  await Firebase.initializeApp(); //FCM
+  FCMinit();
   runApp(const MyApp());
 }
 
