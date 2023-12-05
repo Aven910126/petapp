@@ -41,7 +41,7 @@ class _SignInForm extends State<SignInForm> {
                   labelText: 'Email',
                   enabled: true,
                   contentPadding:
-                      const EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0),
+                  const EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0),
                   focusedBorder: OutlineInputBorder(
                     borderSide: new BorderSide(color: Colors.grey),
                     borderRadius: new BorderRadius.circular(10),
@@ -89,13 +89,13 @@ class _SignInForm extends State<SignInForm> {
                       }),
                   filled: true,
                   prefixIcon:
-                      const Icon(Icons.lock, size: 30, color: Colors.orange),
+                  const Icon(Icons.lock, size: 30, color: Colors.orange),
                   fillColor: Colors.white10,
                   hintText: 'Password',
                   labelText: 'Password',
                   enabled: true,
                   contentPadding:
-                      const EdgeInsets.only(left: 14.0, bottom: 8.0, top: 15.0),
+                  const EdgeInsets.only(left: 14.0, bottom: 8.0, top: 15.0),
                   focusedBorder: OutlineInputBorder(
                     borderSide: new BorderSide(color: Colors.grey),
                     borderRadius: new BorderRadius.circular(10),
@@ -161,7 +161,7 @@ class _SignInForm extends State<SignInForm> {
                   });
                   Future.delayed(Duration(seconds: 1), () {
                     if (_formKey.currentState!.validate()) {
-                      error.fire();
+                      check.fire();
                       Future.delayed(Duration(seconds: 2), () {
                         setState(() {
                           isShowLoading = false;
@@ -190,17 +190,17 @@ class _SignInForm extends State<SignInForm> {
         ),
         isShowLoading
             ? CustomPositioned(
-                child: RiveAnimation.asset(
-                  "assets/RiveAssets/check.riv",
-                  onInit: (artboard) {
-                    StateMachineController controller =
-                        RiveUtils.getRiveController(artboard);
-                    check = controller.findSMI("Check") as SMITrigger;
-                    error = controller.findSMI("Error") as SMITrigger;
-                    reset = controller.findSMI("Reset") as SMITrigger;
-                  },
-                ),
-              )
+          child: RiveAnimation.asset(
+            "assets/RiveAssets/check.riv",
+            onInit: (artboard) {
+              StateMachineController controller =
+              RiveUtils.getRiveController(artboard);
+              check = controller.findSMI("Check") as SMITrigger;
+              error = controller.findSMI("Error") as SMITrigger;
+              reset = controller.findSMI("Reset") as SMITrigger;
+            },
+          ),
+        )
             : const SizedBox(),
         isShowConfetti ? CustomPositioned(
           child: Transform.scale(
